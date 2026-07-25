@@ -1,26 +1,88 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-ink: #050b12;
+  --color-navy: #0d1b2a;
+  --color-navy-soft: #12233a;
+  --color-teal: #1ab5a8;
+  --color-teal-soft: #7fd9d0;
+  --color-gold: #c9a84c;
+  --color-gold-soft: #e3c885;
+  --color-cream: #f5f1e6;
+  --color-ash: #9fb3bd;
+  --color-line: rgba(159, 179, 189, 0.16);
+
+  --font-display: var(--font-space-grotesk), sans-serif;
+  --font-body: var(--font-inter), sans-serif;
+
+  --container-wrap: 1160px;
+
+  --background-image-hero-radial: radial-gradient(
+      60% 50% at 82% 8%,
+      rgba(26, 181, 168, 0.16),
+      transparent 60%
+    ),
+    radial-gradient(50% 45% at 8% 88%, rgba(201, 168, 76, 0.12), transparent 60%);
+  --background-image-closing-radial: radial-gradient(
+    55% 60% at 50% 0%,
+    rgba(201, 168, 76, 0.1),
+    transparent 65%
+  );
+  --background-image-btn-primary: linear-gradient(120deg, #1ab5a8, #12938a);
+  --background-image-hero-accent: linear-gradient(90deg, #7fd9d0, #e3c885);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #050b12;
+  color: #f5f1e6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* reveal-on-scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+.service-card-li {
+  padding-left: 16px;
+  position: relative;
+}
+.service-card-li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 6px;
+  height: 1px;
+  background: #e3c885;
+}
+
+.chip::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #c9a84c;
+  display: inline-block;
 }
