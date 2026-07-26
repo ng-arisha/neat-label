@@ -5,8 +5,10 @@ import Divider from "@/components/Divider";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Nav from "@/components/Nav";
+import Qualifier from "@/components/Qualifier";
 import Sectors from "@/components/Sectors";
 import Services from "@/components/Services";
+import TradeMap from "@/components/TradeMap";
 
 
 export default function Home() {
@@ -18,7 +20,9 @@ export default function Home() {
       <About />
       <Services />
       <Sectors />
+      <TradeMap />
       <Approach />
+      <Qualifier />
       <Closing />
       <Footer />
     </>

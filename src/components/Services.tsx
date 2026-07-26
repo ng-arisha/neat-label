@@ -1,6 +1,7 @@
 import Reveal from "./Reveal";
 
 type Service = {
+  slug: string;
   title: string;
   items: string[];
   icon: React.ReactNode;
@@ -13,6 +14,7 @@ const iconProps = {
 
 const services: Service[] = [
   {
+    slug: "business-growth-market-entry",
     title: "Business Growth & Market Entry",
     items: [
       "Market entry strategies for East African markets",
@@ -28,6 +30,7 @@ const services: Service[] = [
     ),
   },
   {
+    slug: "investment-promotion-advisory",
     title: "Investment Promotion & Advisory",
     items: [
       "Investor sourcing and matchmaking",
@@ -43,6 +46,7 @@ const services: Service[] = [
     ),
   },
   {
+    slug: "trade-export-development",
     title: "Trade & Export Development",
     items: [
       "Export market identification",
@@ -58,6 +62,7 @@ const services: Service[] = [
     ),
   },
   {
+    slug: "business-consultancy",
     title: "Business Consultancy",
     items: [
       "Business strategy development",
@@ -72,6 +77,7 @@ const services: Service[] = [
     ),
   },
   {
+    slug: "research-market-intelligence",
     title: "Research & Market Intelligence",
     items: [
       "Industry and sector research",
@@ -88,6 +94,7 @@ const services: Service[] = [
     ),
   },
   {
+    slug: "procurement-supply-chain-advisory",
     title: "Procurement & Supply Chain Advisory",
     items: [
       "Strategic sourcing",
@@ -105,6 +112,7 @@ const services: Service[] = [
     ),
   },
   {
+    slug: "project-development-management",
     title: "Project Development & Management",
     items: [
       "Project concept development",
@@ -119,6 +127,7 @@ const services: Service[] = [
     ),
   },
   {
+    slug: "marketing-brand-development",
     title: "Marketing & Brand Development",
     items: [
       "Brand strategy",
@@ -134,6 +143,7 @@ const services: Service[] = [
     ),
   },
   {
+    slug: "government-institutional-advisory",
     title: "Government & Institutional Advisory",
     items: [
       "Public sector engagement",
@@ -148,6 +158,7 @@ const services: Service[] = [
     ),
   },
   {
+    slug: "business-networking-representation",
     title: "Business Networking & Representation",
     items: [
       "Business representation in East Africa",
@@ -188,7 +199,8 @@ export default function Services() {
           {services.map((s) => (
             <div
               key={s.title}
-              className="bg-navy px-6 pb-7 pt-8 transition-colors duration-300 ease-out hover:bg-navy-soft sm:px-8"
+              id={s.slug}
+              className="scroll-mt-24 bg-navy px-6 pb-7 pt-8 transition-colors duration-300 ease-out hover:bg-navy-soft target:bg-navy-soft target:ring-1 target:ring-inset target:ring-teal/40 sm:px-8"
             >
               <div className="mb-4 flex items-start gap-4">
                 <div className="flex h-11 w-11 flex-none items-center justify-center rounded-[10px] border border-teal/28 bg-teal/10">
